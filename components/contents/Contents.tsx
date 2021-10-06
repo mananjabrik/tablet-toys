@@ -33,6 +33,7 @@ export const Contents: React.FC<ContentsProps> = (props) => {
 							border="1px solid white"
 							bg="blackAlpha.100"
 							_hover={{ bg: 'gray' }}
+							onClick={props.onAddGroup}
 						>
 							+ Add New Group
 						</Button>

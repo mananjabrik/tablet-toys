@@ -1,9 +1,10 @@
-import { Grid, GridItem, Container, Box, Text, Image } from '@chakra-ui/react';
+import { Box, useDisclosure } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import { FaCog, FaUsers, FaPuzzlePiece, FaUser } from 'react-icons/fa';
-import { Footer, MenuSidebar, Navbar, Layout, Contents } from '../components';
+import { Layout, Contents, ModalAddGroup } from '../components';
 
 const Home: NextPage = () => {
+	const { isOpen, onOpen, onClose } = useDisclosure();
 	const dataMenu = [
 		{
 			title: 'Lobby',
@@ -24,11 +25,11 @@ const Home: NextPage = () => {
 
 	const dataGroup = [
 		{
-			title: 'group 1 (Pendaki)',
+			titleGroup: 'group 1 ( Pendaki )',
 			users: ['manan', 'H salim', 'P Slamet'],
 		},
 		{
-			title: 'group 2 (Panjat Tebing)',
+			titleGroup: 'group 2 ( Panjat Tebing )',
 			users: ['muslim', 'wes', 'mustofa'],
 		},
 	];
@@ -53,8 +54,15 @@ const Home: NextPage = () => {
 					//@ts-ignore
 					dataGroup={dataGroup ?? []}
 					dataUsers={dataUsers}
+					onAddGroup={onOpen}
 				/>
 			</Layout>
+			<ModalAddGroup isOpen={isOpen} onClose={onClose}>
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam
+				et, ipsum sapiente asperiores quos perferendis voluptatibus odit
+				illo sint, quae, modi quam minus autem sequi nemo vel
+				voluptatum! Corrupti, quas?
+			</ModalAddGroup>
 		</Box>
 	);
 };
