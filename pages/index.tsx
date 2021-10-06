@@ -22,10 +22,23 @@ const Home: NextPage = () => {
 		},
 	];
 
+	const dataGroup = [
+		{
+			title: 'group 1 (Pendaki)',
+			users: ['manan', 'H salim', 'P Slamet'],
+		},
+		{
+			title: 'group 2 (Panjat Tebing)',
+			users: ['muslim', 'wes', 'mustofa'],
+		},
+	];
 	return (
 		<Box>
 			<Layout menu={dataMenu}>
-				<Contents />
+				<Contents
+					//@ts-ignore
+					dataGroup={dataGroup ?? []}
+				/>
 			</Layout>
 		</Box>
 	);

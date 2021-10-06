@@ -1,9 +1,7 @@
 import React from 'react';
 import { ItemsProps } from '../../interface';
 import { WrapItem, Stack, Icon, Text, WrapItemProps } from '@chakra-ui/react';
-interface LinkItemProps extends ItemsProps {
-	key?: number | string;
-}
+interface LinkItemProps extends ItemsProps {}
 export const LinkItem: React.FC<LinkItemProps> = (props) => {
 	const ActivateLink = () => {
 		if (props?.active === 1) {
@@ -15,7 +13,6 @@ export const LinkItem: React.FC<LinkItemProps> = (props) => {
 
 	return (
 		<WrapItem
-			key={props.key}
 			justifyContent="center"
 			py="1rem"
 			color="white"
