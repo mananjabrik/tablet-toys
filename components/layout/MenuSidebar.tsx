@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Stack, Icon, Text, Wrap, WrapItem } from '@chakra-ui/react';
+import { Stack, Icon, Text, Wrap, WrapItem, Button } from '@chakra-ui/react';
 import { FaAddressBook, FaCog, FaUsers } from 'react-icons/fa';
 import { MenuSidebarProps } from '../../interface';
+import { LinkItem } from '.';
 
 export const MenuSidebar: React.FC<MenuSidebarProps> = (props) => {
 	return (
@@ -14,25 +15,17 @@ export const MenuSidebar: React.FC<MenuSidebarProps> = (props) => {
 			height="100vh"
 			py="3rem"
 			spacing="0"
+			justify="center"
 		>
 			{props.menu ? (
 				props.menu.map((item, idx) => {
 					return (
-						<WrapItem
+						<LinkItem
 							key={idx}
-							justifyContent="center"
-							py="1rem"
-							color="white"
-							cursor="pointer"
-							_hover={{ bg: '#46a3db' }}
-							transition="0.2s"
-							w="full"
-						>
-							<Stack align="center">
-								<Icon as={item.icon} w="2rem" h="2rem"></Icon>
-								<Text fontWeight="light">{item.title}</Text>
-							</Stack>
-						</WrapItem>
+							icon={item.icon}
+							title={item.title}
+							active={item.active}
+						/>
 					);
 				})
 			) : (
@@ -51,6 +44,9 @@ export const MenuSidebar: React.FC<MenuSidebarProps> = (props) => {
 					</Stack>
 				</WrapItem>
 			)}
+			<Button position="absolute" bottom="10rem" colorScheme="blackAlpha">
+				Logout
+			</Button>
 		</Wrap>
 	);
 };

@@ -1,7 +1,8 @@
 export interface MenuSidebarProps {
-	menu: ItemsProps[];
+	menu?: ItemsProps[];
 }
 export interface ItemsProps {
-	title: string;
-	icon: any;
+	title?: string;
+	icon?: any;
+	active?: number;
 }
