@@ -1,4 +1,6 @@
+import { UserProps } from '.';
+
 export interface GroupCardProps {
 	titleGroup?: string;
-	users?: string[];
+	users?: UserProps[];
 }

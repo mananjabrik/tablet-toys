@@ -1,16 +1,6 @@
 import React from 'react';
-import {
-	Box,
-	Stack,
-	Heading,
-	Button,
-	Text,
-	Icon,
-	Wrap,
-	WrapItem,
-} from '@chakra-ui/react';
-import { Group, GroupProps, Users } from '.';
-import { FaAddressBook, FaUser } from 'react-icons/fa';
+import { Box, Stack, Heading, Button } from '@chakra-ui/react';
+import { Groups, GroupProps, Users } from '.';
 import { UserProps } from '../../interface';
 interface ContentsProps {
 	onAddGroup?: () => void;
@@ -47,9 +37,9 @@ export const Contents: React.FC<ContentsProps> = (props) => {
 							+ Add New Group
 						</Button>
 					</Stack>
-					<Group
+					<Groups
 						//@ts-ignore
-						dataGroup={props.dataGroup ?? []}
+						dataGroup={props?.dataGroup ?? []}
 					/>
 				</Stack>
 				<Box

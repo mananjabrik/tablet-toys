@@ -14,7 +14,7 @@ export const Users: React.FC<UsersProps> = (props) => {
 				{props.dataUser?.map((user, idx) => {
 					return (
 						<WrapItem w="full" key={idx}>
-							<User icon={user.icon} name={user.name} />
+							<User name={user.name} />
 						</WrapItem>
 					);
 				})}

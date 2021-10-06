@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stack, Icon, Text } from '@chakra-ui/react';
 import { UserProps } from '../../interface/User';
+import { FaUser } from 'react-icons/fa';
 
 export const User: React.FC<UserProps> = (props) => {
 	return (
@@ -13,7 +14,7 @@ export const User: React.FC<UserProps> = (props) => {
 			rounded="md"
 		>
 			<Icon
-				as={props.icon}
+				as={FaUser}
 				w="5"
 				h="5"
 				border="1px solid White"
