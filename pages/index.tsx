@@ -1,6 +1,6 @@
 import { Grid, GridItem, Container, Box, Text, Image } from '@chakra-ui/react';
 import type { NextPage } from 'next';
-import { FaCog, FaUsers, FaPuzzlePiece } from 'react-icons/fa';
+import { FaCog, FaUsers, FaPuzzlePiece, FaUser } from 'react-icons/fa';
 import { Footer, MenuSidebar, Navbar, Layout, Contents } from '../components';
 
 const Home: NextPage = () => {
@@ -32,12 +32,27 @@ const Home: NextPage = () => {
 			users: ['muslim', 'wes', 'mustofa'],
 		},
 	];
+	const dataUsers = [
+		{
+			icon: FaUser,
+			name: 'hasbulla',
+		},
+		{
+			icon: FaUser,
+			name: 'habibun',
+		},
+		{
+			icon: FaUser,
+			name: 'asmad',
+		},
+	];
 	return (
 		<Box>
 			<Layout menu={dataMenu}>
 				<Contents
 					//@ts-ignore
 					dataGroup={dataGroup ?? []}
+					dataUsers={dataUsers}
 				/>
 			</Layout>
 		</Box>

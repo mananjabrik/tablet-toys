@@ -1,10 +1,21 @@
 import React from 'react';
-import { Box, Stack, Heading, Button, Text, Icon } from '@chakra-ui/react';
-import { Group, GroupProps } from '.';
+import {
+	Box,
+	Stack,
+	Heading,
+	Button,
+	Text,
+	Icon,
+	Wrap,
+	WrapItem,
+} from '@chakra-ui/react';
+import { Group, GroupProps, Users } from '.';
 import { FaAddressBook, FaUser } from 'react-icons/fa';
+import { UserProps } from '../../interface';
 interface ContentsProps {
 	onAddGroup?: () => void;
 	dataGroup?: GroupProps[];
+	dataUsers: UserProps[];
 }
 export const Contents: React.FC<ContentsProps> = (props) => {
 	return (
@@ -49,26 +60,7 @@ export const Contents: React.FC<ContentsProps> = (props) => {
 					justifyContent="center"
 					display="flex"
 				>
-					<Box>
-						<Text mb="5">LIST OF CONNECTED PLATYERS( 4 )</Text>
-						<Stack
-							direction="row"
-							align="center"
-							bg="#46a3db"
-							p="1"
-							rounded="md"
-						>
-							<Icon
-								as={FaUser}
-								w="5"
-								h="5"
-								border="1px solid White"
-								p="1"
-								rounded="full"
-							/>
-							<Text>User Name</Text>
-						</Stack>
-					</Box>
+					<Users dataUser={props.dataUsers ?? []} />
 				</Box>
 			</Stack>
 		</Box>
