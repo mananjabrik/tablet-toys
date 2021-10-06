@@ -1,7 +1,15 @@
-import { Box, useDisclosure } from '@chakra-ui/react';
 import type { NextPage } from 'next';
+import {
+	Box,
+	useDisclosure,
+	Stack,
+	FormControl,
+	FormLabel,
+	Input,
+	Text,
+} from '@chakra-ui/react';
 import { FaCog, FaUsers, FaPuzzlePiece, FaUser } from 'react-icons/fa';
-import { Layout, Contents, ModalAddGroup } from '../components';
+import { Layout, Contents, ModalAddGroup, User } from '../components';
 
 const Home: NextPage = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -58,10 +66,29 @@ const Home: NextPage = () => {
 				/>
 			</Layout>
 			<ModalAddGroup isOpen={isOpen} onClose={onClose}>
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam
-				et, ipsum sapiente asperiores quos perferendis voluptatibus odit
-				illo sint, quae, modi quam minus autem sequi nemo vel
-				voluptatum! Corrupti, quas?
+				<Stack direction="row">
+					<Box flex={1}>
+						<FormControl>
+							<FormLabel>Title</FormLabel>
+							<Input placeholder="add new group"></Input>
+						</FormControl>
+					</Box>
+					<Box flex={1}>
+						<Text>Select Team</Text>
+						<Box mt="1">
+							<User name="manan" />
+						</Box>
+						<Box mt="1">
+							<User name="manan" />
+						</Box>
+						<Box mt="1">
+							<User name="manan" />
+						</Box>
+						<Box mt="1">
+							<User name="manan" />
+						</Box>
+					</Box>
+				</Stack>
 			</ModalAddGroup>
 		</Box>
 	);

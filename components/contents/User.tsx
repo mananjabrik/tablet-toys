@@ -12,6 +12,7 @@ export const User: React.FC<UserProps> = (props) => {
 			bg="#46a3db"
 			p="1"
 			rounded="md"
+			cursor="pointer"
 		>
 			<Icon
 				as={FaUser}
