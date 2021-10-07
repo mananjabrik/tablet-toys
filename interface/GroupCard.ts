@@ -1,6 +1,6 @@
-import { UserProps } from '.';
+import { usersDTO } from '.';
 
 export interface GroupCardProps {
 	titleGroup?: string;
-	users?: UserProps[];
+	users?: usersDTO[];
 }
