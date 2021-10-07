@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box, Stack, Heading, Button } from '@chakra-ui/react';
 import { Groups, GroupProps, Users } from '.';
-import { UserProps } from '../../interface';
+import { UserProps, usersDTO } from '../../interface';
 interface ContentsProps {
 	onAddGroup?: () => void;
 	dataGroup?: GroupProps[];
-	dataUsers: UserProps[];
+	dataUsers: usersDTO[];
 }
 export const Contents: React.FC<ContentsProps> = (props) => {
 	return (

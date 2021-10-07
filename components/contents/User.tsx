@@ -1,9 +1,22 @@
 import React from 'react';
 import { Stack, Icon, Text } from '@chakra-ui/react';
-import { UserProps } from '../../interface/User';
+import { usersDTO } from '../../interface/User';
 import { FaUser } from 'react-icons/fa';
+import { useRecoilState } from 'recoil';
+import { UsersState } from '../../state';
 
-export const User: React.FC<UserProps> = (props) => {
+export const User: React.FC<usersDTO> = (props) => {
+	const [usersData, setUsersData] = useRecoilState(UsersState);
+
+	const handleUsers = () => {
+		setUsersData({
+			...usersData,
+			[props?.id]: {
+				...props,
+			},
+		});
+		// console.log(props.name, props.id);
+	};
 	return (
 		<Stack
 			flex={1}
@@ -13,6 +26,7 @@ export const User: React.FC<UserProps> = (props) => {
 			p="1"
 			rounded="md"
 			cursor="pointer"
+			onClick={handleUsers}
 		>
 			<Icon
 				as={FaUser}

@@ -12,6 +12,7 @@ import {
 interface ModalAddGroupProps {
 	isOpen: boolean;
 	onClose: () => void;
+	onSave?: () => void;
 }
 export const ModalAddGroup: React.FC<ModalAddGroupProps> = (props) => {
 	return (
@@ -25,7 +26,9 @@ export const ModalAddGroup: React.FC<ModalAddGroupProps> = (props) => {
 					<Button colorScheme="blue" mr={3} onClick={props.onClose}>
 						Close
 					</Button>
-					<Button colorScheme="green">Save</Button>
+					<Button colorScheme="green" onClick={props.onSave}>
+						Save
+					</Button>
 				</ModalFooter>
 			</ModalContent>
 		</Modal>
